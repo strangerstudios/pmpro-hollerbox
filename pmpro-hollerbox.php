@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Paid Memberships Pro - Hollerbox Sales Notifications
- * Description: Display a hollerbox message everytime someone checks out.
+ * Plugin Name: Paid Memberships Pro - Hollerbox Integration
+ * Description: Display a Holler Box for user's with a certain PMPro membership level.
  * Plugin URI: https://paidmembershipspro.com
  * Author: Stranger Studios
  * Author URI: https://paidmembershipspro.com
@@ -14,17 +14,9 @@
 defined( 'ABSPATH' ) or exit;
 
 class PMPro_Hollerbox {
-
-    /*--------------------------------------------*
-     * Attributes
-     *--------------------------------------------*/
  
     /** Refers to a single instance of this class. */
     private static $instance = null;
- 
-    /*--------------------------------------------*
-     * Constructor
-     *--------------------------------------------*/
  
     /**
      * Creates or returns an instance of this class.
@@ -50,10 +42,6 @@ class PMPro_Hollerbox {
     	//initialize the plugin & check for required plugins
     	add_action( 'init', array( $this, 'init' ) );
     } // end constructor
-
-    /*--------------------------------------------*
-     * Functions
-     *--------------------------------------------*/
 
     /**
      * Add all included classes/files inside this method.
