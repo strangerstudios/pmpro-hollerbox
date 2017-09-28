@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Paid Memberships Pro - Hollerbox Integration
+ * Plugin Name: Paid Memberships Pro - Holler Box Integration
  * Description: Display a Holler Box for user's with a certain PMPro membership level.
  * Plugin URI: https://paidmembershipspro.com
  * Author: Stranger Studios
