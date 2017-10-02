@@ -79,6 +79,9 @@ class PMPro_Hollerbox {
 
 		$pmpro_settings_array = array();
 
+		// add option for non-members
+		$keys[] = 'pmpro_membership_no_level';
+
 		$levels = pmpro_getAllLevels( true, true );
 
 		//save each level as post meta.
@@ -100,11 +103,12 @@ class PMPro_Hollerbox {
 		//get all pmpro levels
 		$levels = pmpro_getAllLevels( true, true );
 
+		$non_member_saved = get_post_meta( $post_id, 'pmpro_membership_no_level', true );
 		?>
 		<hr>
 		<?php _e( 'Show this Holler Box for the following PMPro membership level', 'pmpro-hollerbox' ); ?>
 		<div class="hwp-settings-group">
-
+			<input type="checkbox" name="pmpro_membership_no_level" value="non_member" <?php checked( $non_member_saved, 'non_member', true );?> > <?php _e( 'Non-members (includes logged-in non-members)', 'pmpro-hollerbox' ); ?></input><br>
 			<?php foreach( $levels as $key => $value ) { 
 				//get_saved_levels
 				$levels_saved = get_post_meta( $post_id, 'pmpro_membership_level_'.$value->id, true );
@@ -140,7 +144,18 @@ class PMPro_Hollerbox {
 				}else{
 					$show_it = false;
 				}
-			}	
+			}
+
+		// Check to see if non-members is selected.
+		$non_members = get_post_meta( $box_id, 'pmpro_membership_no_level', true );
+
+		// Check to see if non_members data exists and user does not have membership level.
+		if( !empty( $non_members ) ) {
+			if( !pmpro_hasMembershipLevel() ) {
+				$show_it = true;
+			}
+		}
+
 		return $show_it;
 	}
 
