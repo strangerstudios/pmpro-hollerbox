@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class for PMPro Holler Box (Admin)
+ * Class for Holler Box for PMPro (Admin)
  * All admin related code to be added to this class.
  */
 
@@ -87,7 +87,7 @@ class PMPro_Hollerbox_Admin{
 
 			
 			'strings'      => array(
-				'page_title'                      => __( 'Install Required Plugins For PMPro Hollerbox Sales', 'pmpro-hollerbox' ),
+				'page_title'                      => __( 'Install Required Plugins For Holler Box for PMPro', 'pmpro-hollerbox' ),
 				'menu_title'                      => __( 'Required Plugins', 'pmpro-hollerbox' ),
 				/* translators: %s: plugin name. */
 				'installing'                      => __( 'Installing Plugin: %s', 'pmpro-hollerbox' ),
@@ -96,20 +96,20 @@ class PMPro_Hollerbox_Admin{
 				'oops'                            => __( 'Something went wrong with the plugin API.', 'pmpro-hollerbox' ),
 				'notice_can_install_required'     => _n_noop(
 					/* translators: 1: plugin name(s). */
-					'PMPro Hollerbox Sales Notifications requires the following plugin: %1$s.',
-					'PMPro Hollerbox Sales Notifications requires the following plugins: %1$s.',
+					'Holler Box for PMPro requires the following plugin: %1$s.',
+					'Holler Box for PMPro requires the following plugins: %1$s.',
 					'pmpro-hollerbox'
 				),
 				'notice_can_install_recommended'  => _n_noop(
 					/* translators: 1: plugin name(s). */
-					'PMPro Hollerbox Sales Notifications recommends the following plugin: %1$s.',
-					'PMPro Hollerbox Sales Notifications recommends the following plugins: %1$s.',
+					'Holler Box for PMPro recommends the following plugin: %1$s.',
+					'Holler Box for PMPro recommends the following plugins: %1$s.',
 					'pmpro-hollerbox'
 				),
 				'notice_ask_to_update'            => _n_noop(
 					/* translators: 1: plugin name(s). */
-					'The following plugin needs to be updated to its latest version to ensure maximum compatibility with PMPro Hollerbox Sales Notifications: %1$s.',
-					'The following plugins need to be updated to their latest version to ensure maximum compatibility with PMPro Hollerbox Sales Notifications: %1$s.',
+					'The following plugin needs to be updated to its latest version to ensure maximum compatibility with Holler Box for PMPro: %1$s.',
+					'The following plugins need to be updated to their latest version to ensure maximum compatibility with Holler Box for PMPro: %1$s.',
 					'pmpro-hollerbox'
 				),
 				'notice_ask_to_update_maybe'      => _n_noop(
@@ -151,7 +151,7 @@ class PMPro_Hollerbox_Admin{
 				/* translators: 1: plugin name. */
 				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'pmpro-hollerbox' ),
 				/* translators: 1: plugin name. */
-				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for PMPro Hollerbox Sales Notifications. Please update the plugin.', 'pmpro-hollerbox' ),
+				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for Holler Box for PMPro. Please update the plugin.', 'pmpro-hollerbox' ),
 				/* translators: 1: dashboard link. */
 				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'pmpro-hollerbox' ),
 				'dismiss'                         => __( 'Dismiss this notice', 'pmpro-hollerbox' ),

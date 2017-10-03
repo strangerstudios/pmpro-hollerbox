@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Paid Memberships Pro - Holler Box Integration
- * Description: Display a Holler Box for user's with a certain PMPro membership level.
- * Plugin URI: https://paidmembershipspro.com
- * Author: Stranger Studios
- * Author URI: https://paidmembershipspro.com
+ * Description: Integrates Paid Memberships Pro with the Holler Box plugin to display popups/banners by membership level.
+ * Plugin URI: https://www.paidmembershipspro.com/add-ons/holler-box-integration/
+ * Author: Paid Memberships Pro
+ * Author URI: https://www.paidmembershipspro.com
  * Version: .1
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -105,19 +105,20 @@ class PMPro_Hollerbox {
 
 		$non_member_saved = get_post_meta( $post_id, 'pmpro_membership_no_level', true );
 		?>
-		<hr>
-		<?php _e( 'Show this Holler Box for the following PMPro membership level', 'pmpro-hollerbox' ); ?>
-		<div class="hwp-settings-group">
-			<input type="checkbox" name="pmpro_membership_no_level" value="non_member" <?php checked( $non_member_saved, 'non_member', true );?> > <?php _e( 'Non-members (includes logged-in non-members)', 'pmpro-hollerbox' ); ?></input><br>
-			<?php foreach( $levels as $key => $value ) { 
-				//get_saved_levels
-				$levels_saved = get_post_meta( $post_id, 'pmpro_membership_level_'.$value->id, true );
-
-				?>
-
-                <input type="checkbox" name="pmpro_membership_level_<?php echo $value->id; ?>" value="<?php echo $value->id; ?>" <?php if( !empty( $levels_saved ) ){ ?> checked <?php } ?>><?php echo $value->name ?></input><br>
-            <?php } ?>
-            </div>
+		</div>
+		<div class="hwp-section noborder">
+			<hr />
+			<h3>Membership Settings</h3>
+			<p><label for="pmpro_membership_levels"><?php _e( 'Show this Holler Box for the following membership levels', 'pmpro-hollerbox' ); ?></p></label>
+			<div class="hwp-settings-group">
+				<input type="checkbox" name="pmpro_membership_no_level" value="non_member" <?php checked( $non_member_saved, 'non_member', true );?>><?php _e( 'Non-Members (including logged-in, non-members)', 'pmpro-hollerbox' ); ?></input><br>
+				<?php foreach( $levels as $key => $value ) { 
+					//get_saved_levels
+					$levels_saved = get_post_meta( $post_id, 'pmpro_membership_level_'.$value->id, true ); ?>
+					<input type="checkbox" name="pmpro_membership_level_<?php echo $value->id; ?>" value="<?php echo $value->id; ?>" <?php if( !empty( $levels_saved ) ){ ?> checked <?php } ?>><?php echo $value->name ?></input><br />
+				<?php } ?>
+			</div>
+            <hr />
 		<?php
 	}
 
@@ -163,7 +164,7 @@ class PMPro_Hollerbox {
 
 
 /**
- * The main function responsible for returning the one true PMPro Hollerbox Sales
+ * The main function responsible for returning the one true Holler Box for PMPro
  * instance to functions everywhere
  *
  * @since       0.1.0
@@ -175,3 +176,18 @@ function pmpro_hollerbox_load() {
 }
 add_action( 'plugins_loaded', 'pmpro_hollerbox_load' );
 
+/*
+	Function to add links to the plugin row meta
+*/
+function pmpron_plugin_row_meta($links, $file) {
+	if(strpos($file, 'pmpro-hollerbox.php') !== false)
+	{
+		$new_links = array(
+			'<a href="' . esc_url('https://www.paidmembershipspro.com/add-ons/holler-box-integration/')  . '" title="' . esc_attr( __( 'View Documentation', 'pmpro-hollerbox' ) ) . '">' . __( 'Docs', 'pmpro-hollerbox' ) . '</a>',
+			'<a href="' . esc_url('http://paidmembershipspro.com/support/') . '" title="' . esc_attr( __( 'Visit Customer Support Forum', 'pmpro-hollerbox' ) ) . '">' . __( 'Support', 'pmpro-hollerbox' ) . '</a>',
+		);
+		$links = array_merge($links, $new_links);
+	}
+	return $links;
+}
+add_filter( 'plugin_row_meta', 'pmpron_plugin_row_meta', 10, 2 );

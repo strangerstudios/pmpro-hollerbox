@@ -1,21 +1,29 @@
-=== Paid Memberships Pro - Holler Box ===
+=== Paid Memberships Pro - Holler Box Integration ===
 Contributors: strangerstudios
 Tags: paid memberships pro, pmpro, holler box, hollerbox, marketing
 Requires at least: 4
 Tested up to: 4.8
 Stable tag: .1
 
-Use Holler Box with Paid Memberships Pro  
+Integrates Paid Memberships Pro with the Holler Box plugin to display popups/banners by membership level.
 
 == Description ==
 
-Use Holler Box with Paid Memberships Pro  
+Holler Box by Scott Bolinger is an open source plugin available for download in the WordPress repository (https://wordpress.org/plugins/holler-box/). The plugin allows you to create popups or banner notifications that display on the front end of your website. eCommerce site owners are using these popups to collect leads and generate more sales.
+
+This integration adds Membership restrictions when using the Paid Memberships Pro plugin to your boxes, allowing you to display unique content based on the user's membership status, either a specific level or for no level (non-member).
 
 == Installation ==
 
 = Download, Install and Activate! =
 1. Upload the `pmpro-hollerbox` directory to the `/wp-content/plugins/` directory of your site.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
+
+== Setup ==
+1. Create a new Holler Box under Holler Box > Add New.
+1. At the bottom of the 'Advanced Settings' meta box, locate the 'Membership Settings' field.
+1. Select the levels to display this Holler Box for, or select Non-Members to display only for visitors or users without a membership level.
+1. Update or Publish the Holler Box.
 
 == Frequently Asked Questions ==
 
