@@ -2,8 +2,8 @@
 Contributors: strangerstudios
 Tags: paid memberships pro, pmpro, holler box, hollerbox, marketing
 Requires at least: 4
-Tested up to: 4.8
-Stable tag: .1
+Tested up to: 4.8.2
+Stable tag: .1.1
 
 Integrates Paid Memberships Pro with the Holler Box plugin to display popups/banners by membership level.
 
@@ -36,6 +36,8 @@ Please post it in the issues section of GitHub and we'll fix it as soon as we ca
 Please visit our premium support site at http://www.paidmembershipspro.com for more documentation and our support forums.
 
 == Changelog ==
+= .1.1 =
+* BUG FIX: Fixed fatal error if loaded with the PMPro Network plugin as well.
 
 = .1 =
 * NOTE: Initial commit.
