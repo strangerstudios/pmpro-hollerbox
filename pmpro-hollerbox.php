@@ -179,7 +179,7 @@ add_action( 'plugins_loaded', 'pmpro_hollerbox_load' );
 /*
 	Function to add links to the plugin row meta
 */
-function pmpron_plugin_row_meta($links, $file) {
+function pmpro_hollerbox_plugin_row_meta($links, $file) {
 	if(strpos($file, 'pmpro-hollerbox.php') !== false)
 	{
 		$new_links = array(
@@ -190,4 +190,4 @@ function pmpron_plugin_row_meta($links, $file) {
 	}
 	return $links;
 }
-add_filter( 'plugin_row_meta', 'pmpron_plugin_row_meta', 10, 2 );
+add_filter( 'plugin_row_meta', 'pmpro_hollerbox_plugin_row_meta', 10, 2 );
