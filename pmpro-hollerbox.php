@@ -130,6 +130,11 @@ class PMPro_Hollerbox {
 	 */
 	public static function hwp_display_notification( $show_it, $box_id, $post_id ){
 
+		// If you don't need to show it due to default settings, let's bail.
+		if ( ! $show_it ) {
+			return $show_it;
+		}
+
 		$levels = pmpro_getAllLevels( true, true );
 
 		$membership_level_required = array();
