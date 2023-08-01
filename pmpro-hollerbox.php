@@ -108,7 +108,7 @@ class PMPro_Hollerbox {
 		</div>
 		<div class="hwp-section noborder">
 			<hr />
-			<h3>Membership Settings</h3>
+			<h2>Membership Settings</h2>
 			<p><label for="pmpro_membership_levels"><?php _e( 'Show this Holler Box for the following membership levels', 'pmpro-hollerbox' ); ?></p></label>
 			<div class="hwp-settings-group">
 				<input type="checkbox" name="pmpro_membership_no_level" value="non_member" <?php checked( $non_member_saved, 'non_member', true );?>><?php _e( 'Non-Members (including logged-in, non-members)', 'pmpro-hollerbox' ); ?></input><br>
